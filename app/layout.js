@@ -23,8 +23,8 @@ const amiri = Amiri({
 })
 
 export const metadata = {
-  title: 'Mohamed & Rania — Invitation de Mariage',
-  description: 'Vous êtes cordialement invités à célébrer notre union. يشرفنا حضوركم',
+  title: 'Mohamed Boubker — Invitation de Mariage',
+  description: 'Vous êtes cordialement invités à célébrer ce mariage. يشرفنا حضوركم',
 }
 
 export const viewport = {
