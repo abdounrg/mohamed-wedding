@@ -263,36 +263,7 @@ export default function Invitation() {
         </div>
       </section>
 
-      {/* ── 3. NOTICE SECTION (No Children) ── */}
-      <section className="notice-section" id="notice">
-        <div className="royal-container narrow">
-          <ScrollReveal direction="scale">
-            <div className="royal-card notice-card">
-              <div className="royal-card-inner">
-                <span className="notice-icon">🤍</span>
-                <h3 className="notice-heading">Chers Invités</h3>
-                <RoyalDivider />
-                <p className="notice-text">
-                  Afin de permettre à tous de profiter pleinement de cette soirée,
-                  nous vous prions gentiment de ne pas amener d&#39;enfants.
-                </p>
-                <p className="notice-muted">
-                  Merci infiniment de votre bienveillance et compréhension.
-                </p>
-                <div className="notice-ar-box">
-                  <p className="notice-text-ar">
-                    نرجو من ضيوفنا الكرام عدم اصطحاب الأطفال
-                    <br />
-                    شاكرين لكم حسن تفهمكم وكرم تعاونكم
-                  </p>
-                </div>
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* ── 4. DETAILS / LOCATION SECTION ── */}
+      {/* ── 3. DETAILS / LOCATION SECTION ── */}
       <section className="details-section" id="location">
         <div className="royal-container">
           <ScrollReveal>
@@ -380,7 +351,7 @@ export default function Invitation() {
         </div>
       </section>
 
-      {/* ── 5. COUNTDOWN SECTION ── */}
+      {/* ── 4. COUNTDOWN SECTION ── */}
       <section className="countdown-section">
         <div className="royal-container narrow">
           <ScrollReveal>
@@ -399,7 +370,7 @@ export default function Invitation() {
         </div>
       </section>
 
-      {/* ── 6. FOOTER ── */}
+      {/* ── 5. FOOTER ── */}
       <footer className="footer-section">
         <ScrollReveal>
           <RoyalDivider />

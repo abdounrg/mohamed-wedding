@@ -768,66 +768,7 @@ body {
 }
 
 /* ================================================
-   3. NOTICE SECTION (No Children)
-   ================================================ */
-.notice-section {
-  padding: clamp(50px, 6vw, 80px) 0;
-  background: #060D17;
-  display: flex;
-  justify-content: center;
-}
-
-.notice-icon {
-  font-size: 1.8rem;
-  color: var(--gold);
-  display: inline-block;
-  margin-bottom: 6px;
-  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.4));
-}
-
-.notice-heading {
-  font-family: var(--font-cormorant), serif;
-  font-size: 1.55rem;
-  color: #FFF2C6;
-  font-weight: 700;
-  letter-spacing: 2px;
-}
-
-.notice-text {
-  font-family: var(--font-cormorant), serif;
-  font-size: clamp(1.1rem, 2.2vw, 1.25rem);
-  color: #F8F4EC;
-  line-height: 1.8;
-  max-width: 500px;
-  margin: 0 auto;
-  font-weight: 500;
-}
-
-.notice-muted {
-  font-family: var(--font-cormorant), serif;
-  font-size: 0.95rem;
-  color: #BDB09B;
-  font-style: italic;
-  margin-top: 6px;
-}
-
-.notice-ar-box {
-  margin-top: 18px;
-  padding-top: 16px;
-  border-top: 1px dashed rgba(212, 175, 55, 0.25);
-}
-
-.notice-text-ar {
-  font-family: var(--font-amiri), 'Amiri', serif;
-  font-size: clamp(1.2rem, 2.4vw, 1.35rem);
-  color: #FFE5A3;
-  direction: rtl;
-  line-height: 1.85;
-  font-weight: 700;
-}
-
-/* ================================================
-   4. DETAILS / LOCATION SECTION
+   3. DETAILS / LOCATION SECTION
    ================================================ */
 .details-section {
   padding: clamp(60px, 8vw, 100px) 0;
@@ -1052,7 +993,7 @@ body {
 }
 
 /* ================================================
-   5. COUNTDOWN SECTION
+   4. COUNTDOWN SECTION
    ================================================ */
 .countdown-section {
   padding: clamp(60px, 8vw, 100px) 0;
