@@ -25,6 +25,11 @@ const amiri = Amiri({
 export const metadata = {
   title: 'Mohamed Boubker — Invitation de Mariage',
   description: 'Vous êtes cordialement invités à célébrer ce mariage. يشرفنا حضوركم',
+  applicationName: 'Mariage Mohamed Boubker',
+  other: {
+    'theme-color': '#0A1628',
+    'msapplication-TileColor': '#0A1628',
+  },
 }
 
 export const viewport = {
