@@ -119,7 +119,7 @@ export default function Envelope({ onOpen }) {
           <p className="env-letter-bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
           <div className="env-letter-line" />
           <p className="env-letter-type">Invitation de Mariage</p>
-          <h2 className="env-letter-name shimmer-gold">Mohamed Boubker</h2>
+          <h2 className="env-letter-name">Mohamed Boubker</h2>
           <div className="env-letter-line small" />
           <p className="env-letter-date">Mercredi 16 Décembre 2026</p>
           <p className="env-letter-venue">Salle des Fêtes El Hani • Alger</p>

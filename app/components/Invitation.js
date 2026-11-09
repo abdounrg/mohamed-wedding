@@ -155,7 +155,7 @@ export default function Invitation() {
 
           {/* Groom's Name */}
           <motion.h1
-            className="hero-names shimmer-gold"
+            className="hero-names"
             initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.1, delay: 0.55, ease: [0.22, 1, 0.36, 1] }}
@@ -355,7 +355,7 @@ export default function Invitation() {
       <section className="countdown-section">
         <div className="royal-container narrow">
           <ScrollReveal>
-            <p className="countdown-names shimmer-gold">Mohamed Boubker</p>
+            <p className="countdown-names">Mohamed Boubker</p>
             <p className="countdown-label">Compte à Rebours Avant le Jour J</p>
             <RoyalDivider />
           </ScrollReveal>
