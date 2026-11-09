@@ -440,36 +440,37 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
-  filter: brightness(0.88) contrast(1.12);
+  object-position: center 35%;
+  filter: brightness(0.95) contrast(1.08) saturate(1.1);
   transform: scale(1.02);
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    circle at 50% 48%,
-    rgba(6, 13, 23, 0.72) 0%,
-    rgba(6, 13, 23, 0.86) 55%,
-    rgba(6, 13, 23, 0.98) 100%
+  background: linear-gradient(
+    180deg,
+    rgba(6, 13, 23, 0.28) 0%,
+    rgba(6, 13, 23, 0.38) 30%,
+    rgba(6, 13, 23, 0.52) 65%,
+    rgba(6, 13, 23, 0.95) 100%
   );
   pointer-events: none;
 }
 
 .hero-gold-glow {
   position: absolute;
-  top: 50%;
+  top: 48%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: clamp(300px, 70vw, 800px);
-  height: clamp(300px, 70vw, 800px);
+  width: clamp(320px, 60vw, 700px);
+  height: clamp(320px, 60vw, 700px);
   border-radius: 50%;
   background: radial-gradient(
     circle,
-    transparent 20%,
-    rgba(212, 175, 55, 0.08) 55%,
-    transparent 75%
+    rgba(212, 175, 55, 0.1) 0%,
+    rgba(212, 175, 55, 0.02) 50%,
+    transparent 70%
   );
   filter: blur(50px);
   pointer-events: none;
@@ -482,18 +483,11 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 32px 18px;
+  padding: 30px 16px;
   gap: 12px;
   max-width: 820px;
   width: 92%;
   margin: 0 auto;
-  background: radial-gradient(
-    ellipse at 50% 50%,
-    rgba(6, 13, 23, 0.6) 0%,
-    rgba(6, 13, 23, 0.3) 50%,
-    transparent 80%
-  );
-  border-radius: 30px;
 }
 
 /* Royal Crest */
@@ -526,12 +520,12 @@ body {
 .hero-verse {
   font-family: var(--font-amiri), 'Amiri', 'Traditional Arabic', serif;
   font-size: clamp(1.15rem, 3.2vw, 1.85rem);
-  color: #FFECA8;
+  color: #FFE699;
   direction: rtl;
   line-height: 1.85;
   font-weight: 700;
   max-width: 740px;
-  text-shadow: 0 2px 8px #000000, 0 0 16px rgba(0, 0, 0, 0.9);
+  text-shadow: 0 2px 6px #000000, 0 0 16px rgba(0, 0, 0, 0.9);
   text-rendering: optimizeLegibility;
 }
 
@@ -550,23 +544,23 @@ body {
   text-align: center;
   word-break: normal;
   overflow-wrap: break-word;
-  color: #FFF5D1;
+  color: #FFF9E6;
   text-shadow: 
     0 2px 4px #000000,
-    0 4px 16px rgba(0, 0, 0, 0.95),
-    0 0 25px rgba(212, 175, 55, 0.6),
-    0 0 50px rgba(212, 175, 55, 0.25);
+    0 4px 18px rgba(0, 0, 0, 0.95),
+    0 0 25px rgba(212, 175, 55, 0.5),
+    0 0 50px rgba(0, 0, 0, 0.8);
 }
 
 /* Subtitle */
 .hero-subtitle {
   font-family: var(--font-cormorant), serif;
   font-size: clamp(1.15rem, 2.4vw, 1.45rem);
-  color: #E8DCC4;
+  color: #F8F4EC;
   font-style: italic;
   font-weight: 500;
   letter-spacing: 1.2px;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
 }
 
 /* Date & Time Capsule Badge */
