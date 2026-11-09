@@ -26,6 +26,14 @@ export const metadata = {
   title: 'Mohamed Boubker — Invitation de Mariage',
   description: 'Vous êtes cordialement invités à célébrer ce mariage. يشرفنا حضوركم',
   applicationName: 'Mariage Mohamed Boubker',
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+    apple: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+  },
   other: {
     'theme-color': '#0A1628',
     'msapplication-TileColor': '#0A1628',
@@ -35,8 +43,7 @@ export const metadata = {
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
+  viewportFit: 'cover',
 }
 
 export default function RootLayout({ children }) {

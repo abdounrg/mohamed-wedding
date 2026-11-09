@@ -7,14 +7,14 @@ import Image from 'next/image'
 /* ─── Directional Scroll Reveal ─── */
 function ScrollReveal({ children, delay = 0, direction = 'up', className = '' }) {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: '-60px' })
+  const isInView = useInView(ref, { once: true, margin: '0px 0px -15px 0px' })
 
   const directions = {
-    up: { y: 35, x: 0 },
-    down: { y: -35, x: 0 },
-    left: { y: 0, x: -35 },
-    right: { y: 0, x: 35 },
-    scale: { y: 0, x: 0, scale: 0.9 },
+    up: { y: 25, x: 0 },
+    down: { y: -25, x: 0 },
+    left: { y: 0, x: -25 },
+    right: { y: 0, x: 25 },
+    scale: { y: 0, x: 0, scale: 0.94 },
   }
 
   const from = directions[direction] || directions.up
@@ -25,7 +25,7 @@ function ScrollReveal({ children, delay = 0, direction = 'up', className = '' })
       className={`scroll-reveal ${className}`}
       initial={{ opacity: 0, ...from }}
       animate={isInView ? { opacity: 1, y: 0, x: 0, scale: 1 } : {}}
-      transition={{ duration: 0.85, delay, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.75, delay, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
     </motion.div>
@@ -342,7 +342,7 @@ export default function Invitation() {
                     className="direction-btn secondary"
                   >
                     <span className="direction-icon">{copied ? '✓' : '📋'}</span>
-                    <span>{copied ? 'Adresse copiée dans le presse-papier !' : 'Copier l\'adresse'}</span>
+                    <span>{copied ? 'Adresse copiée !' : 'Copier l\'adresse'}</span>
                   </button>
                 </div>
               </div>

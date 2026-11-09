@@ -48,12 +48,13 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  background-color: #060D17;
 }
 
 body {
   font-family: var(--font-cormorant), 'Cormorant Garamond', 'Georgia', serif;
-  background: var(--ivory);
-  color: var(--text-dark);
+  background-color: #060D17;
+  color: #F8F4EC;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -61,23 +62,34 @@ body {
 
 /* === GOLD SHIMMER TEXT ANIMATION === */
 .shimmer-gold {
-  color: var(--gold);
-  /* fallback */
-  background: linear-gradient(120deg,
-      var(--gold-dark) 0%,
-      var(--gold) 25%,
-      #FFF3D4 50%,
-      var(--gold) 75%,
-      var(--gold-dark) 100%);
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: goldShimmer 4s ease-in-out infinite;
+  color: #F0D278; /* Solid, rich gold fallback - always 100% visible on every device */
+  display: inline-block;
+  max-width: 100%;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  isolation: isolate;
+}
+
+@supports (-webkit-background-clip: text) or (background-clip: text) {
+  .shimmer-gold {
+    background: linear-gradient(
+      120deg,
+      #B38728 0%,
+      #FBF5B7 20%,
+      #E0B034 40%,
+      #FFF5D6 55%,
+      #DAA520 70%,
+      #B38728 100%
+    );
+    background-size: 220% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: goldShimmer 5s ease-in-out infinite;
+  }
 }
 
 @keyframes goldShimmer {
-
   0%,
   100% {
     background-position: 100% 50%;
@@ -256,17 +268,19 @@ body {
 }
 
 .env-letter-name {
-  font-family: var(--font-script), 'Great Vibes', cursive;
-  font-size: 2.7rem;
-  line-height: 1.1;
-  margin: 3px 0;
+  font-family: var(--font-script), 'Great Vibes', 'Playfair Display', cursive, serif;
+  font-size: clamp(1.9rem, 6.5vw, 2.6rem);
+  line-height: 1.2;
+  margin: 4px 0;
+  letter-spacing: 0;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.25));
 }
 
 .env-letter-date {
   font-family: var(--font-cormorant), serif;
   font-size: 0.88rem;
   color: #8C6619;
-  letter-spacing: 2.5px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   font-weight: 700;
   margin-top: 2px;
@@ -284,7 +298,7 @@ body {
 /* Tap button bar at bottom */
 .env-tap-bar {
   position: absolute;
-  bottom: 46px;
+  bottom: max(32px, calc(20px + env(safe-area-inset-bottom, 0px)));
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
@@ -409,13 +423,14 @@ body {
 .hero-section {
   position: relative;
   width: 100%;
+  min-height: 100vh;
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: 60px 0;
+  padding: 50px 0 60px;
 }
 
 .hero-bg-image {
@@ -501,15 +516,15 @@ body {
 
 /* Quranic Verse */
 .hero-verse {
-  font-family: var(--font-amiri), 'Amiri', serif;
-  font-size: clamp(1.2rem, 3.2vw, 1.85rem);
+  font-family: var(--font-amiri), 'Amiri', 'Traditional Arabic', serif;
+  font-size: clamp(1.15rem, 3.2vw, 1.85rem);
   color: #FFE8A3;
   direction: rtl;
   line-height: 1.85;
   font-weight: 700;
   max-width: 740px;
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.8),
-               0 0 24px rgba(212, 175, 55, 0.3);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
+  text-rendering: optimizeLegibility;
 }
 
 .hero-divider {
@@ -518,13 +533,16 @@ body {
 
 /* Groom's Name */
 .hero-names {
-  font-family: var(--font-script), 'Great Vibes', cursive;
-  font-size: clamp(3.4rem, 7.5vw, 6rem);
-  line-height: 1.15;
+  font-family: var(--font-script), 'Great Vibes', 'Playfair Display', cursive, serif;
+  font-size: clamp(2.5rem, 8.5vw, 5.5rem);
+  line-height: 1.25;
   font-weight: 400;
-  letter-spacing: 1px;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
-  margin: 4px 0;
+  letter-spacing: 0;
+  margin: 6px 0;
+  text-align: center;
+  word-break: normal;
+  overflow-wrap: break-word;
+  filter: drop-shadow(0 4px 18px rgba(0, 0, 0, 0.85));
 }
 
 /* Subtitle */
@@ -605,14 +623,14 @@ body {
    ================================================ */
 .rsvp-float {
   position: fixed;
-  bottom: 24px;
-  right: 20px;
+  bottom: max(20px, calc(16px + env(safe-area-inset-bottom, 0px)));
+  right: max(16px, calc(14px + env(safe-area-inset-right, 0px)));
   z-index: 50;
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 12px 22px;
-  background: rgba(10, 20, 32, 0.94);
+  padding: 12px 20px;
+  background: rgba(10, 20, 32, 0.96);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border: 1px solid rgba(212, 175, 55, 0.45);
@@ -1003,9 +1021,12 @@ body {
 }
 
 .countdown-names {
-  font-family: var(--font-script), 'Great Vibes', cursive;
-  font-size: clamp(2.6rem, 5vw, 3.6rem);
+  font-family: var(--font-script), 'Great Vibes', 'Playfair Display', cursive, serif;
+  font-size: clamp(2.3rem, 6vw, 3.6rem);
+  letter-spacing: 0;
+  line-height: 1.2;
   margin-bottom: 2px;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.5));
 }
 
 .countdown-label {
@@ -1021,13 +1042,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(10px, 2.5vw, 22px);
-  margin: 28px 0;
+  gap: clamp(6px, 2.2vw, 18px);
+  margin: 26px 0;
+  width: 100%;
 }
 
 .countdown-item {
-  width: clamp(72px, 17vw, 100px);
-  height: clamp(72px, 17vw, 100px);
+  width: clamp(66px, 19vw, 96px);
+  height: clamp(66px, 19vw, 96px);
   border-radius: 50%;
   border: 1.5px solid rgba(212, 175, 55, 0.45);
   background: radial-gradient(circle at 35% 35%, rgba(20, 36, 56, 0.95) 0%, rgba(9, 17, 28, 0.98) 100%);
@@ -1039,6 +1061,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 2px;
+  flex-shrink: 0;
 }
 
 .countdown-number {
@@ -1120,17 +1143,63 @@ body {
    ================================================ */
 @media (max-width: 480px) {
   .hero-date-badge {
-    padding: 10px 18px;
-    gap: 8px;
+    padding: 10px 16px;
+    gap: 10px;
+    max-width: 95%;
   }
 
   .badge-item {
     flex-direction: column;
-    gap: 1px;
+    gap: 2px;
+  }
+
+  .badge-label {
+    font-size: 0.7rem;
+    letter-spacing: 1.5px;
+  }
+
+  .badge-val {
+    font-size: clamp(0.85rem, 3.2vw, 1rem);
+    letter-spacing: 1px;
   }
 
   .badge-dot {
     display: none;
+  }
+
+  .royal-container {
+    width: 94%;
+  }
+
+  .royal-card {
+    border-radius: 18px;
+    padding: 12px;
+  }
+
+  .royal-card-inner {
+    border-radius: 14px;
+    padding: 22px 14px;
+  }
+
+  .direction-btn {
+    padding: 14px 16px;
+    font-size: 0.82rem;
+    letter-spacing: 1.5px;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-names {
+    font-size: 2.25rem;
+  }
+
+  .countdown-item {
+    width: 62px;
+    height: 62px;
+  }
+
+  .countdown-number {
+    font-size: 1.5rem;
   }
 }
 
