@@ -117,14 +117,27 @@ export default function Invitation() {
     >
       {/* ── 1. HERO SECTION ── */}
       <section className="hero-section">
-        <Image
-          src="/hero-bg-palace.jpg"
-          alt="Palais des Fêtes"
-          fill
-          priority
-          className="hero-bg-image"
-          sizes="100vw"
-        />
+        {/* Responsive Palace Ballroom Background: High-Res Portrait on Mobile, Majestic Landscape on Desktop */}
+        <div className="hero-bg-wrapper">
+          <Image
+            src="/hero-bg-palace-portrait.jpg"
+            alt="Palais des Fêtes Mohamed Boubker"
+            fill
+            priority
+            quality={95}
+            className="hero-bg-image hero-bg-mobile"
+            sizes="(max-width: 768px) 100vw, 1px"
+          />
+          <Image
+            src="/hero-bg-palace.jpg"
+            alt="Palais des Fêtes Mohamed Boubker"
+            fill
+            priority
+            quality={92}
+            className="hero-bg-image hero-bg-desktop"
+            sizes="(min-width: 769px) 100vw, 1px"
+          />
+        </div>
         <div className="hero-overlay" />
         <div className="hero-gold-glow" />
 
